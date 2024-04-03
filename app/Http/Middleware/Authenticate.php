@@ -27,10 +27,9 @@ class Authenticate extends Middleware
                 //Check logic
                 // Lấy session id hiện tại
                 //So sánh với session id trong bảng user --> Nếu khác nhau , sẽ xử lý logout(kèm theo message) nếu giống nhau thì bỏ qua
-                $checkDevice  = $this->checkDevice($request);
-                if (!$checkDevice) {
+                $checkDevice = $this->checkDevice($request);
+                if ($checkDevice) {
                     $this->unauthenticated($request, $guards);
-                }
                 }
                 return $this->auth->shouldUse($guard);
             }
