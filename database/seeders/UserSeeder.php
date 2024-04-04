@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+
 class UserSeeder extends Seeder
 {
     /**
@@ -14,8 +15,8 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         $user = new User();
-        $user->name = 'Admin';
-        $user->email = 'admin@gmail.com';
+        $user->name = 'User 1';
+        $user->email = 'user@gmail.com';
         $user->password = Hash::make('123456');
         $user->save();
     }
